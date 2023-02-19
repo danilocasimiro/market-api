@@ -40,11 +40,15 @@ gem "figaro"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
+  gem "cpf_cnpj"
   gem 'database_cleaner'
   gem 'factory_bot_rails'
+  gem 'faker'
   gem 'pry-byebug'
-  gem 'rspec-rails', '~> 3.5'
+  gem 'rspec-its'
+  gem 'rspec-rails', '~> 5.0.1'
   gem 'rubocop-rails', require: false
+  gem 'shoulda-matchers', '~> 5.3'
 end
 
 group :development do
