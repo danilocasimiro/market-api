@@ -15,5 +15,21 @@ FactoryBot.define do
     trait :inactive do
       active { false }
     end
+
+    trait(:with_address) do
+      association :addresses,
+                  strategy: strategy
+    end
+
+    trait(:with_phone) do
+      association :phones,
+                  strategy: strategy
+    end
+
+    factory :user_active_complete,
+            traits: %I[active with_address with_phone]
+
+    factory :user_inactive_complete,
+            traits: %I[inactive with_address with_phone]
   end
 end
